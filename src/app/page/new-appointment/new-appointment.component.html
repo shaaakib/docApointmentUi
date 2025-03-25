@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">New Appointment</h2>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Mobile No <span class="text-danger">*</span></label>
+                <input type="text" (change)="getPatientInfo()" [(ngModel)]="appObj.mobileNo" name="mobileNo" class="form-control" placeholder="Enter mobile number" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Patient Name</label>
+                <input type="text" [(ngModel)]="appObj.patientName" name="patientName" class="form-control" placeholder="Enter patient name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" [(ngModel)]="appObj.email" name="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">City <span class="text-danger">*</span></label>
+                <input type="text" [(ngModel)]="appObj.city" name="city" class="form-control" placeholder="Enter city" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address <span class="text-danger">*</span></label>
+                <textarea class="form-control" [(ngModel)]="appObj.address" name="address" rows="3" placeholder="Enter address" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Appointment Date <span class="text-danger">*</span></label>
+                <input type="date" [(ngModel)]="appObj.appointmentDate" name="appointmentDate" class="form-control" required>
+            </div>
+            <div class="text-center d-flex gap-3">
+                <button type="submit" (click)="OnSave()" class="btn btn-primary">Create</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>

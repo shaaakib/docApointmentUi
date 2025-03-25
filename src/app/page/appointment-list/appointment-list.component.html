@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button"  [class]="activeBtnName == 'All' ? 'btn btn-success' : 'btn btn-primary' " (click)=" getAllAppointment()">All</button>
+            <button type="button" [class]="activeBtnName == 'New' ? 'btn btn-success' : 'btn btn-primary' " (click)="getNewAppointment()">New</button>
+            <button type="button" [class]="activeBtnName == 'Done' ? 'btn btn-success' : 'btn btn-primary' " (click)="getDoneAppointment()">Done</button>
+          </div>
+    </div>
+</div>
+
+<div class="row pt-3">
+    @for (item of appointmentList; track $index) {
+        <div class="col-3">
+            <div [class]="item.isDone? 'car bg-success' : 'card bg-secondary' " style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.patientName}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{item.mobileNo}} - {{item.city}}</h6>
+                  <p class="card-text">{{item.isDone ? 'Done' : 'New'}}</p>
+                  <a class="btn btn-warning btn-sm" (click)="onMarkDone(item.appointmentId)">Mark Done</a>
+                </div>
+              </div>
+        </div>
+    }
+   
+</div>
