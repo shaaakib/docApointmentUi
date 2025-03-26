@@ -31,4 +31,8 @@ export class MasterService {
   changeStatus(appointmentid: string){
     return this.http.get('https://localhost:7221/api/Appointment/ChangeStatus?appointmentid='+appointmentid);
   }
+
+  getAllPatient(){
+    return this.http.get('https://localhost:7221/api/Appointment/getAllPatient');
+  }
 }
